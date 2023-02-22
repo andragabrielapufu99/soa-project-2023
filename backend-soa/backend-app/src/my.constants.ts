@@ -1,0 +1,4 @@
+export const USER_SERVICE = 'USER_SERVICE';
+export const REQUEST_SERVICE = 'REQUEST_SERVICE';
+export const DOWNLOAD_SERVICE = 'DOWNLOAD_SERVICE';
+export const AI_SERVICE = 'AI_SERVICE';

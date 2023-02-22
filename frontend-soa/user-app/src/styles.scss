@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: #244A8B;
+  background: linear-gradient(90deg, #244A8B 0%, #2E386D 35%, #153037 100%);
+  //background: #A28DB4;
+  //background: linear-gradient(90deg, #A28DB4 0%, #F2D5CD 35%, #FFF7FA 100%);
+}
+
+.custom-card {
+  border-radius: 8px!important;
+  padding: 0!important;
+  border: 1px solid white;
+  mat-card-header, mat-card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  mat-card-header {
+    margin: 0!important;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    .mat-card-header-text {
+      margin: 0!important;
+    }
+    background: #282957;
+    background: linear-gradient(90deg, #282957 0%, #121236 89%, #272554 100%);
+  }
+
+  mat-card-content {
+    padding: 16px;
+    margin: 0;
+  }
+  mat-card-footer {
+    margin: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
