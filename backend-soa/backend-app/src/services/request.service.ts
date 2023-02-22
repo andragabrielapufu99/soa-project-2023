@@ -42,4 +42,9 @@ export class RequestService {
         const pattern = { cmd: 'analyze'};
         return this.clientAI.send<ReportRequest[]>(pattern, requests);
     }
+
+    getAll(): Observable<ReportRequest[]> {
+        const pattern = {cmd: 'all'};
+        return this.clientRequest.send<ReportRequest[]>(pattern, {});
+    }
 }

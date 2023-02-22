@@ -16,4 +16,14 @@ export class UserController {
   addUser(@Body() user: User): Observable<User> {
     return this.service.addUser(user);
   }
+
+  @Post('update')
+  updateUser(@Body() user: User): Observable<User> {
+    return this.service.updateUser(user);
+  }
+
+  @Post('login')
+  login(@Body() credentials: any): Observable<User> {
+    return this.service.login(credentials);
+  }
 }

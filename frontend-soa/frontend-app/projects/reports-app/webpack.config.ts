@@ -15,12 +15,12 @@ export const webpackConfig: Configuration = {
   },
   plugins: [
     new container.ModuleFederationPlugin({
-      name: 'reports',
-      library: {type: 'var', name: 'reports'},
-      filename: 'remoteReports.js',
+      name: 'dashboard',
+      library: {type: 'var', name: 'dashboard'},
+      filename: 'remoteDashboard.js',
       exposes: {
-        ReportsModule: './projects/reports-app/src/app/app.module.ts',
-        ReportsComponent: './projects/reports-app/src/app/app.component.ts'
+        DashboardModule: './projects/reports-app/src/app/pages/dashboard/dashboard.module.ts',
+        DashboardComponent: './projects/reports-app/src/app/pages/dashboard/dashboard.component.ts'
       },
       shared: {
         '@angular/core': {

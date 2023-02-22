@@ -13,8 +13,17 @@ export class UserService {
     }
 
     addUser(user: User): Observable<User> {
-        const pattern = { cmd: 'add'};
+        const pattern = {cmd: 'add'};
         return this.client.send<User>(pattern, user);
     }
 
+    updateUser(user: User): Observable<User> {
+        const pattern = {cmd: 'update'};
+        return this.client.send<User>(pattern, user);
+    }
+
+    login(credentials: any): Observable<User> {
+        const pattern = {cmd: 'login'};
+        return this.client.send<User>(pattern, credentials);
+    }
 }

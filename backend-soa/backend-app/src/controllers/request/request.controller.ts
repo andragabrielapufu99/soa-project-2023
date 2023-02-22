@@ -27,6 +27,11 @@ export class RequestController {
     return this.service.getHello();
   }
 
+  @Get('all')
+  getRequests(): Observable<ReportRequest[]> {
+    return this.service.getAll();
+  }
+
   @Post('add')
   addRequest(@Body() request: ReportRequest): Observable<ReportRequest> {
     return this.service.addRequest(request);

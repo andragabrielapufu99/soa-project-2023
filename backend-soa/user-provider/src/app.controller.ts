@@ -16,4 +16,14 @@ export class AppController {
   async addUser(user: User): Promise<User> {
     return this.appService.addUser(user);
   }
+
+  @MessagePattern({cmd: 'update'})
+  async updateUser(user: User): Promise<User> {
+    return this.appService.updateUser(user);
+  }
+
+  @MessagePattern({cmd: 'login'})
+  async login(credentials: any): Promise<User> {
+    return this.appService.login(credentials);
+  }
 }

@@ -26,4 +26,9 @@ export class AppController {
   async getUnprocessedRequests(): Promise<ReportRequest[]> {
     return this.appService.getUnprocessedRequests();
   }
+
+  @MessagePattern({cmd: 'all'})
+  async getAll(): Promise<ReportRequest[]> {
+    return this.appService.getAll();
+  }
 }
