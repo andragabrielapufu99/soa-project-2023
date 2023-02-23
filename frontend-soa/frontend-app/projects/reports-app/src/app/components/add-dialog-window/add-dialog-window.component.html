@@ -1,0 +1,41 @@
+<mat-card class="custom-card full-height">
+  <mat-card-header class="bg-primary">
+    <div class="full-height" style="color: white;">
+      ADD NEW REQUEST
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="field-container">
+      <div class="label-container full-height">Request Type:</div>
+      <div class="main-input-container full-height">
+        <div class="inner-input-container full-height" style="width: 100%;">
+          <div class="input-container" [ngStyle]="{'height': '90%' ? (errorType !== '') : '100%'}">
+            <select [(ngModel)]="selected" (ngModelChange)="changeType()">
+              <option *ngFor="let option of selectOptions" value="{{option.value}}">{{option.name}}</option>
+            </select>
+          </div>
+          <div class="input-error-container"><p *ngIf="errorType !== ''">{{errorType}}</p></div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="requestResult.type === 1 || requestResult.type === 2" class="full-height" style="width: 100%;">
+      <div style="width: 100%; height: 95%; box-sizing: border-box;">
+        <div class="field-container">
+          <div class="label-container full-height">Link:</div>
+          <div class="main-input-container full-height">
+            <div class="inner-input-container full-height" style="width: 100%;">
+              <div class="input-container" [ngStyle]="{'height': '90%' ? (errorLink !== '') : '100%'}"><input type="text" [(ngModel)]="requestResult.link"></div>
+              <div class="input-error-container"><p *ngIf="errorLink !== ''">{{errorLink}}</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="footer-container">
+        <div class="buttons-window-container full-height">
+          <div class="button-close full-height"><button mat-raised-button (click)="close()">CANCEL</button></div>
+          <div class="button-ok full-height"><button mat-raised-button (click)="clickOK()" [disabled]="!valid"><span>OK</span></button></div>
+        </div>
+      </div>
+  </mat-card-content>
+</mat-card>

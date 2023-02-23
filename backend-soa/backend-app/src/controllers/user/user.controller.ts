@@ -22,8 +22,8 @@ export class UserController {
     return this.service.updateUser(user);
   }
 
-  @Post('login')
-  login(@Body() credentials: any): Observable<User> {
-    return this.service.login(credentials);
-  }
+  // @Post('login')
+  // login(@Body() credentials: any): Observable<User> {
+  //   return this.service.login(credentials);
+  // }
 }

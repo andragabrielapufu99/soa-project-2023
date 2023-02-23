@@ -1,1 +1,59 @@
-<p>dashboard works!</p>
+<div class="dashboard-main-container">
+  <div class="header-container">
+    <div class="actions-buttons">
+      <div class="add-request-btn-container">
+        <button mat-flat-button color="primary" (click)="onAdd()">
+          ADD REQUEST
+        </button>
+      </div>
+      <div class="logout-btn-container">
+        <mat-icon (click)="onLogout()" style="color: white;">logout</mat-icon>
+      </div>
+    </div>
+  </div>
+  <div class="requests-cards-container">
+    <div *ngFor="let row of requests" class="row-container">
+      <div class="request-card-container" *ngFor="let request of row;">
+        <mat-card class="custom-card request-card">
+          <mat-card-header></mat-card-header>
+          <mat-card-content>
+            <div *ngIf="request.status === 0" class="unprocessed-request-container">
+              UNPROCESSED
+            </div>
+            <div *ngIf="request.status === 1" class="inprogress-request-container">
+              <div style="width: 100%; height: 100%; box-sizing: border-box;">
+                <div class="row-detail">INPROGRESS...</div>
+                <div class="row-detail">Date: {{request.date}}</div>
+                <div class="row-detail">Type: {{getRequestTypeText(request.type)}}</div>
+                <div *ngIf="request.type === 1" class="row-detail">Link: <a href="{{request.link}}" target="_blank">See song</a></div>
+                <div *ngIf="request.type === 2" class="row-detail">Link: <a href="{{request.link}}" target="_blank">See playlist</a></div>
+              </div>
+            </div>
+            <div *ngIf="request.status === 2" class="processed-request-container">
+              <div class="pie-chart-container">
+                <div class="row-detail" *ngFor="let result of pieChartsData[request.id.toString()]">
+                  {{result.name.toUpperCase()}} : {{result.value}}
+                </div>
+                <!--              <ngx-charts-pie-chart *ngIf="pieChartsData.hasOwnProperty(request.id.toString())"-->
+                <!--                [scheme]="'cool'"-->
+                <!--                [results]="pieChartsData[request.id.toString()]"-->
+                <!--                [animations]="true"-->
+                <!--                [explodeSlices]="true"-->
+                <!--                [labels]="true"-->
+                <!--                [gradient]="true"-->
+                <!--              >-->
+                <!--              </ngx-charts-pie-chart>-->
+              </div>
+              <div class="report-details-container">
+                <div class="row-detail">Date: {{request.date}}</div>
+                <div class="row-detail">Type: {{getRequestTypeText(request.type)}}</div>
+                <div *ngIf="request.type === 1" class="row-detail">Link: <a href="{{request.link}}" target="_blank">See song</a></div>
+                <div *ngIf="request.type === 2" class="row-detail">Link: <a href="{{request.link}}" target="_blank">See playlist</a></div>
+              </div>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

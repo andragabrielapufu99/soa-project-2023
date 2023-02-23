@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {ReportRequest} from "../../entities/report-request";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,12 @@ export class ReportRequestService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<any> {
-    return this.http.post<any>(`${this.server_uri}/all`, this.httpOptions);
+  getAllByEmail(email: string): Observable<ReportRequest[]> {
+    let body = {'email': email};
+    return this.http.post<ReportRequest[]>(`${this.server_uri}/all`, body, this.httpOptions);
+  }
+
+  addRequest(request: ReportRequest): Observable<ReportRequest> {
+    return this.http.post<ReportRequest>(`${this.server_uri}/add`, request, this.httpOptions);
   }
 }

@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
-import {UserService} from "../../../user-app/src/app/services/user/user.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,9 +15,10 @@ import {UserService} from "../../../user-app/src/app/services/user/user.service"
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [UserService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

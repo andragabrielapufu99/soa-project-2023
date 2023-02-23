@@ -24,12 +24,8 @@ export class AppService {
     return await this.userModel.findOne({email: user.email}).exec();
   }
 
-  async login(credentials: any): Promise<User> {
-    const user = await this.userModel.findOne({email: credentials.email}).exec();
-    if(user) {
-      if(user.password === credentials.password) return Promise.resolve(user);
-      else return Promise.resolve(null);
-    }
-    return await Promise.resolve(null);
+  async getByEmail(email: string): Promise<User> {
+    const user = await this.userModel.findOne({email: email}).exec();
+    return Promise.resolve(user);
   }
 }

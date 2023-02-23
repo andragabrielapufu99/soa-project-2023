@@ -1,0 +1,148 @@
+.dashboard-main-container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  //border: solid 2px red;
+}
+
+.header-container {
+  height: 5%;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: black;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.actions-buttons {
+  height: 100%;
+  width: 50%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.add-request-btn-container {
+  height: 100%;
+  width: 18%;
+  box-sizing: border-box;
+  padding: 0.5%;
+  button {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    color: white;
+    font-size: 0.8vw;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.logout-btn-container {
+  height: 100%;
+  width: 18%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  mat-icon {
+    font-size: 1.25vw;
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.requests-cards-container {
+  //display: inline-flex;
+  height: 95%;
+  width: 100%;
+  box-sizing: border-box;
+  //border: solid 2px dodgerblue;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.row-container {
+  width: 100%;
+  height: 45%;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.request-card-container {
+  height: 100%;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 2%;
+}
+
+.request-card {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  mat-card-header {
+    height: 15%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  mat-card-content {
+    height: 85%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.unprocessed-request-container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+.inprogress-request-container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1vw;
+}
+
+.processed-request-container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.pie-chart-container {
+  height: 50%;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.report-details-container {
+  height: 50%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.row-detail {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.8vw;
+  font-weight: bold;
+}

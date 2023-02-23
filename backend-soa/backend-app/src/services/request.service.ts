@@ -43,8 +43,8 @@ export class RequestService {
         return this.clientAI.send<ReportRequest[]>(pattern, requests);
     }
 
-    getAll(): Observable<ReportRequest[]> {
+    getAllByEmail(body: any): Observable<ReportRequest[]> {
         const pattern = {cmd: 'all'};
-        return this.clientRequest.send<ReportRequest[]>(pattern, {});
+        return this.clientRequest.send<ReportRequest[]>(pattern, body);
     }
 }

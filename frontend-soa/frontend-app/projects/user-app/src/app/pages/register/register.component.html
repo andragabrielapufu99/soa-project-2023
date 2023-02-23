@@ -51,9 +51,6 @@
               <mat-error *ngIf="confPassword.hasError('minlength')">Confirm password must have at least <strong>{{passwordMinLength}}</strong> characters</mat-error>
               <mat-error *ngIf="notMatch">Passwords do not match</mat-error>
             </mat-form-field>
-            <div *ngIf="notMatch" style="background-color: red; width: 20px; height: 20px;">
-
-            </div>
           </div>
         </div>
         <div class="button-container">

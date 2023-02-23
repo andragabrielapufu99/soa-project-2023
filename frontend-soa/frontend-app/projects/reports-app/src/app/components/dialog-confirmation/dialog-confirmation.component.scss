@@ -1,0 +1,82 @@
+::ng-deep mat-dialog-container {
+  padding: 0!important;
+  border-radius: 8px!important;
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0!important;
+}
+
+.custom-card {
+  padding: 0;
+  mat-card-header {
+    margin: 0!important;
+    height: 5%;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    div {
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1vw;
+      padding: 2%;
+    }
+  }
+  mat-card-content {
+    //padding: 32px;
+    padding: 8%;
+    width: 100%;
+    height: 95%;
+    box-sizing: border-box;
+  }
+}
+
+.message-container {
+  width: 100%;
+  height: 95%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9vw;
+  padding-bottom: 5%;
+}
+
+.footer-container {
+  display: flex;
+  width: 100%;
+  height: 5%;
+  box-sizing: border-box;
+}
+
+.buttons-window-container {
+  width: 100%;
+  display: flex;
+}
+
+.button-close {
+  width: 50%;
+  padding: 2%;
+  button {
+    width: 100%;
+    background: #c5cbd3;
+    border: solid 1px #fafbfb;
+    border-radius: 8px;
+    color: #777c83;
+    font-size: 0.8vw;
+  }
+}
+
+.button-ok {
+  width: 50%;
+  padding: 2%;
+  button {
+    width: 100%;
+    background: #00857f;
+    border: solid 1px #e8f0f0;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 0.8vw;
+  }
+}

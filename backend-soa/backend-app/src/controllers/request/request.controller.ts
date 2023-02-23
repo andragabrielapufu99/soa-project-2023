@@ -1,19 +1,21 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards } from '@nestjs/common';
 import { Observable } from 'rxjs';
 import { ReportRequest } from '../../entities';
 import { RequestService } from 'src/services/request.service';
+import { JwtAuthGuard } from '../auth/jwt-auth.guard';
+import { RequestWsGateway } from './request.ws-gateway';
 
+@UseGuards(JwtAuthGuard)
 @Controller('api/request')
 export class RequestController {
-  constructor(private readonly service: RequestService) {
+  constructor(private readonly service: RequestService, private readonly requestWsGateway: RequestWsGateway) {
         setInterval(() => {
             this.getUnprocessedRequests().subscribe(requests => {
                 if(requests.length !== 0){
                     this.downloadRequests(requests).subscribe(downloadedRequests => {
                         this.getAIAnalyze(downloadedRequests).subscribe(analyzedRequets => {
                             this.updateRequests(analyzedRequets).subscribe(result => {
-                                console.log(JSON.stringify(result));
-                                // socket broadcast
+                                this.requestWsGateway.broadcast({event: 'update-requests', payload: result});
                             });
                         });
                     });
@@ -27,9 +29,9 @@ export class RequestController {
     return this.service.getHello();
   }
 
-  @Get('all')
-  getRequests(): Observable<ReportRequest[]> {
-    return this.service.getAll();
+  @Post('all')
+  getRequestsByEmail(@Body() body: any): Observable<ReportRequest[]> {
+    return this.service.getAllByEmail(body);
   }
 
   @Post('add')

@@ -43,7 +43,7 @@ export class AppService {
     return await Promise.resolve(result);
   }
 
-  async getAll(): Promise<ReportRequest[]> {
-    return await this.reportRequestModel.find();
+  async getAllByEmail(body: any): Promise<ReportRequest[]> {
+    return await (await this.reportRequestModel.find({email: body.email})).reverse();
   }
 }

@@ -12,6 +12,11 @@ export class UserService {
         return 'Hello World!';
     }
 
+    getByEmail(email: string): Observable<User> {
+        const pattern = {cmd: 'email'};
+        return this.client.send<User>(pattern, email);
+    }
+
     addUser(user: User): Observable<User> {
         const pattern = {cmd: 'add'};
         return this.client.send<User>(pattern, user);
@@ -20,10 +25,5 @@ export class UserService {
     updateUser(user: User): Observable<User> {
         const pattern = {cmd: 'update'};
         return this.client.send<User>(pattern, user);
-    }
-
-    login(credentials: any): Observable<User> {
-        const pattern = {cmd: 'login'};
-        return this.client.send<User>(pattern, credentials);
     }
 }

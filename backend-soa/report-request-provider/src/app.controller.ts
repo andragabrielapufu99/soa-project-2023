@@ -28,7 +28,7 @@ export class AppController {
   }
 
   @MessagePattern({cmd: 'all'})
-  async getAll(): Promise<ReportRequest[]> {
-    return this.appService.getAll();
+  async getAllByEmail(body: any): Promise<ReportRequest[]> {
+    return this.appService.getAllByEmail(body);
   }
 }

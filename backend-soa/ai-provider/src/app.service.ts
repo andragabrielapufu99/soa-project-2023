@@ -14,7 +14,7 @@ export class AppService {
       for(let i=0; i<request.spectrograms.length; i++){
         const rndInt = Math.floor(Math.random() * maxLimit) + 1;
         for(let j=0; j<rndInt; j++){
-          request.results.push({'emotion': emotions[rndInt], 'count': rndInt + 20});
+          request.results.push({'emotion': emotions[rndInt-1], 'count': rndInt + 20});
         }
       }
     }

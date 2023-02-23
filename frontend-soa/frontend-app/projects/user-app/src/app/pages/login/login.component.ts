@@ -29,10 +29,10 @@ export class LoginComponent implements OnInit {
     let emailValue = this.email.value;
     let passwordValue = this.password.value;
     if(emailValue !== null && passwordValue !== null) {
-      this.userService.login(emailValue, passwordValue).subscribe(user => {
-        console.log('User', user);
-        if(user !== null) {
-          localStorage.setItem('user', JSON.stringify(user));
+      this.userService.login(emailValue, passwordValue).subscribe(token => {
+        console.log('Token', token);
+        if(token !== null) {
+          localStorage.setItem('token', JSON.stringify(token));
           this.router.navigate(['/']);
         }
       });

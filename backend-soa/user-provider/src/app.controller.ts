@@ -22,8 +22,8 @@ export class AppController {
     return this.appService.updateUser(user);
   }
 
-  @MessagePattern({cmd: 'login'})
-  async login(credentials: any): Promise<User> {
-    return this.appService.login(credentials);
+  @MessagePattern({cmd: 'email'})
+  async getByEmail(email: string): Promise<User> {
+    return this.appService.getByEmail(email);
   }
 }

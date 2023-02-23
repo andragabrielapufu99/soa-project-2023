@@ -1,0 +1,16 @@
+<mat-card class="custom-card full-height">
+  <mat-card-header class="bg-primary">
+    <div class="full-height">{{title}}</div>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="full-height" style="width: 100%;">
+      <div class="message-container">{{message}}</div>
+      <div class="footer-container">
+        <div class="buttons-window-container full-height">
+          <div class="button-close"><button mat-raised-button (click)="onCancel()">CANCEL</button></div>
+          <div class="button-ok"><button mat-raised-button (click)="onOk()"><span>OK</span></button></div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
